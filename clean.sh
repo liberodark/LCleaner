@@ -13,7 +13,7 @@ trash="$HOME/.local/share/Trash/files"
 journal="/var/log"
 desktop="$HOME/.local/share/applications"
 update_source="https://raw.githubusercontent.com/liberodark/Linux-Cleaner/master/clean.sh"
-version="0.0.2"
+version="0.0.3"
 
   echo "Welcome on Linux Cleaner $version"
 
@@ -59,21 +59,16 @@ version="0.0.2"
   
 # Check Desktop
 
-  ls ${desktop}/*.desktop 2>/dev/null
-
-  if [[ -z "$count" ]] || [[ $count -eq 0 ]]; then
-      echo "Desktop is OK"
-  else
-      #sudo rm -r $desktop/*
-      echo "Desktop is cleaned"
-  fi
-  
-  # desktop
 for fichier in `ls ${desktop}/*.desktop`
 do
-ligne=` grep '^Exec' $fichier | tail -1`
-executable=`echo $ligne | cut -d "=" -f2`
-echo $executable
-which $executable
-echo $?
+        ligne=`grep '^Exec' $fichier | tail -1`
+        executable=`echo $ligne | sed 's/^\([^= ]\{4\}\)=\"\{0,1\}\([^= \"]\{1,\}\)\"\{0,1\}.*$/\2/g'`
+        which $executable 1>/dev/null 2>/dev/null
+        rc=$?
+        if [[ -n "$rc" ]] && [[ $rc -ne 0 ]]
+        then
+                echo "$executable do not exist, $fichier to remove"
+                sudo rm "$fichier, $executable"
+                echo "Desktop is cleaned"
+        fi
 done
