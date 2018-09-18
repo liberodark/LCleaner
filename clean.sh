@@ -13,7 +13,7 @@ trash="$HOME/.local/share/Trash/files/"
 journal="/var/log/"
 desktop="/home/pc/.local/share/applications/"
 update_source="https://raw.githubusercontent.com/liberodark/Linux-Cleaner/master/clean.sh"
-version="0.0.1"
+version="0.0.2"
 
 echo "Welcome on Linux Cleaner $version"
 
@@ -39,7 +39,7 @@ ls -a $journal | sed -e "/\.$/d" | wc -l &> /dev/null
 if [ "$?" != 0 ]; then
     echo "Journal is empty"
 else
-    sudo rm -r $journal/*
+    sudo rm -r $journal*
     echo "Journal is cleaned"
 fi
 
@@ -49,6 +49,6 @@ ls -a $trash | sed -e "/\.$/d" | wc -l &> /dev/null
 if [ "$?" != 0 ]; then
     echo "Trash is empty"
 else
-    sudo rm -r $trash/*
+    sudo rm -r $trash*
     echo "Trasn is cleaned"
 fi
