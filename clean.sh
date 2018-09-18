@@ -25,7 +25,7 @@ else
 fi ;
 
  # update updater
- if [ "$update_status" = "true" ]; then
+ if [ "$update_status" = "false" ]; then
  	wget -O $0 $update_source
  	$0 noupdate
  	exit 0
@@ -36,7 +36,7 @@ fi ;
 # Check Journal
 count=$(ls -a $journal | sed -e "/\.$/d" | wc -l &> /dev/null)
 
-if [[ -z "$a" ]] || [[ $a -eq 0 ]]; then
+if [[ -z "$count" ]] || [[ $count -eq 0 ]]; then
     echo "Journal is empty"
 else
     sudo rm -r $journal/*
@@ -46,7 +46,7 @@ fi
 # Check Trash
 count=$(ls -a $trash | sed -e "/\.$/d" | wc -l &> /dev/null)
 
-if [[ -z "$a" ]] || [[ $a -eq 0 ]]; then
+if [[ -z "$count" ]] || [[ $count -eq 0 ]]; then
     echo "Trash is empty"
 else
     sudo rm -r $trash/*
