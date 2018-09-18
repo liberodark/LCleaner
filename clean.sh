@@ -42,3 +42,13 @@ else
     sudo rm -r $journal
     echo "Journal is cleaned"
 fi
+
+# Check Trash
+ls -a $trash | sed -e "/\.$/d" | wc -l &> /dev/null
+
+if [ "$?" != 0 ]; then
+    echo "Trash is empty"
+else
+    sudo rm -r $trash
+    echo "Trasn is cleaned"
+fi
