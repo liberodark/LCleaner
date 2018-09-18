@@ -34,7 +34,7 @@ fi ;
 # ls -a $journal | egrep -v "^\.+$" 
 
 # Check Journal
-count=$(ls -a $journal | sed -e "/\.$/d" | wc -l &> /dev/null)
+count=$(ls -a $journal | sed -e "/\.$/d" | wc -l 2>/dev/null)
 
 if [[ -z "$count" ]] || [[ $count -eq 0 ]]; then
     echo "Journal is empty"
@@ -44,7 +44,7 @@ else
 fi
 
 # Check Trash
-count=$(ls -a $trash | sed -e "/\.$/d" | wc -l &> /dev/null)
+count=$(ls -a $trash | sed -e "/\.$/d" | wc -l 2>/dev/null)
 
 if [[ -z "$count" ]] || [[ $count -eq 0 ]]; then
     echo "Trash is empty"
