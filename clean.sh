@@ -36,7 +36,7 @@ fi ;
 # Check Journal
 count=$(ls -a $journal | sed -e "/\.$/d" | wc -l &> /dev/null)
 
-if [ $? -ne 0 -o $count -eq 0 ]; then
+if [ -z "$count" -o $count -eq 0 ]; then
     echo "Journal is empty"
 else
     sudo rm -r $journal/*
@@ -46,9 +46,9 @@ fi
 # Check Trash
 count=$(ls -a $trash | sed -e "/\.$/d" | wc -l &> /dev/null)
 
-if [ $? -ne 0 -o $count -eq 0 ]; then
+if [ -z "$count" -o $count -eq 0 ]; then
     echo "Trash is empty"
 else
     sudo rm -r $trash/*
-    echo "Trasn is cleaned"
+    echo "Trash is cleaned"
 fi
