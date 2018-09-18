@@ -39,7 +39,7 @@ ls -a $journal | sed -e "/\.$/d" | wc -l &> /dev/null
 if [ "$?" != 0 ]; then
     echo "Journal is empty"
 else
-    sudo rm -r /var/log/*
+    sudo rm -r $journal/*
     echo "Journal is cleaned"
 fi
 
