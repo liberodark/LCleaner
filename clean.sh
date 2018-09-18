@@ -8,10 +8,10 @@
  # Init
 
 package="/var/cache/pacman/pkg && /var/cache/apt/archives/ && /var/cache/yum/$basearch/$releasever/"
-cache="~/.cache/"
-trash="~/.local/share/Trash/files/"
-journal="/var/log/"
-desktop="/home/pc/.local/share/applications/"
+cache="~/.cache/*"
+trash="~/.local/share/Trash/files/*"
+journal="/var/log/*"
+desktop="/home/pc/.local/share/applications/*"
 update_source="https://raw.githubusercontent.com/liberodark/Linux-Cleaner/master/clean.sh"
 version="0.0.1"
 
