@@ -3,7 +3,7 @@ Linux-Cleaner
 
 run
 
-```wget -Nnv https://github.com/liberodark/TS3-Update/releases/download/1.9.5/update.sh && chmod +x update.sh; ./update.sh```
+```wget -Nnv https://raw.githubusercontent.com/liberodark/Linux-Cleaner/master/clean.sh && chmod +x clean.sh; ./clean.sh```
 
 Remove old kernels ubuntu / debian :
 
