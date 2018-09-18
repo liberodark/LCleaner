@@ -9,7 +9,7 @@
 
 package="/var/cache/pacman/pkg && /var/cache/apt/archives/ && /var/cache/yum/$basearch/$releasever/"
 cache="~/.cache/"
-trash="~/.local/share/Trash/files/"
+trash="$HOME/.local/share/Trash/files/"
 journal="/var/log/"
 desktop="/home/pc/.local/share/applications/"
 update_source="https://raw.githubusercontent.com/liberodark/Linux-Cleaner/master/clean.sh"
@@ -49,6 +49,6 @@ ls -a $trash | sed -e "/\.$/d" | wc -l &> /dev/null
 if [ "$?" != 0 ]; then
     echo "Trash is empty"
 else
-    sudo rm -r ~/.local/share/Trash/files/*
+    sudo rm -r $trash/*
     echo "Trasn is cleaned"
 fi
