@@ -89,8 +89,8 @@ do
         rc=$?
         if [[ -n "$rc" ]] && [[ $rc -ne 0 ]]
         then
-                echo "$executable do not exist, $fichier to remove"
-                sudo rm "$fichier, $executable"
+                # echo "$executable do not exist, $fichier to remove"
+                sudo rm "$fichier"
                 echo "Desktop is cleaned"
         fi
 done
