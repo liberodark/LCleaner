@@ -2,8 +2,17 @@
 
 Is simple gui to clean your linux distro and secure cleaning
 
-# Run
 
+
+# Run :
+sudo pip install pycrypto
+wget -Nnv https://raw.githubusercontent.com/liberodark/Linux-Cleaner/master/lcleaner.sh && sudo python3 lcleaner.py
+
+# Build :
+Stadalone : nuitka3 --standalone --recurse-on --python-version=3.7 lcleaner.py
+Normal : nuitka3 --recurse-on --python-version=3.7 lcleaner.py
+
+# Run Bash
 ```wget -Nnv https://raw.githubusercontent.com/liberodark/Linux-Cleaner/master/clean.sh && chmod +x clean.sh; ./clean.sh```
 
 ## Fonction Support
