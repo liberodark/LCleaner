@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=LCleaner
+Type=Application
+Comment=Clean your linux
+Terminal=false
+Exec=pkexec /usr/bin/python /usr/bin/lcleaner.py
+Icon=lcleaner
+StartupNotify=true
+Categories=System;
+GenericName=LCleaner
+Keywords=cleaner
