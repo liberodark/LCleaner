@@ -8,7 +8,7 @@
 # Init
 
 package="/var/cache/pacman/pkg && /var/cache/apt/archives/ && /var/cache/yum/$basearch/$releasever/"
-cache="~/.cache"
+cache="$HOME/.cache"
 trash="$HOME/.local/share/Trash/files"
 journal="/var/log"
 desktop="$HOME/.local/share/applications"
