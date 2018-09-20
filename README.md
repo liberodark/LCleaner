@@ -21,8 +21,8 @@ Is simple gui to clean your linux distro and secure cleaning
 
 
 ## Roadmap
-- [ ] Make GUI
-- [ ] Go to python 3
+- [x] Make GUI
+- [x] Go to python 3
 - [ ] Add terminal commands (```--clean all``` or ```--clean cache```)
 - [ ] Add Visibility to gain space
 - [ ] Add clean to find for clean apps removed
