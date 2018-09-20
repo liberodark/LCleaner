@@ -5,7 +5,7 @@ Is simple gui to clean your linux distro and secure cleaning
 
 
 # Run :
-```sudo pip install pycrypto```
+```sudo pip install PyQt5```
 
 ```wget -Nnv https://raw.githubusercontent.com/liberodark/Linux-Cleaner/master/lcleaner.sh && sudo python3 lcleaner.py```
 
