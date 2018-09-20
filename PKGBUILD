@@ -1,4 +1,4 @@
-# Maintainer: Elrondo46 TuxnVape <elrond94@hotmail.com>
+# Maintainer: liberodark
 
 pkgname=lcleaner
 pkgver=0.0.1
