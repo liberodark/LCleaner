@@ -16,3 +16,10 @@ Linux-Cleaner
 - [X] Ubuntu
 - [X] Arch Linux / Manjaro
 - [ ] Other need to test
+
+
+
+## Roadmap
+- [] Make GUI
+- [] Go to python 3
+- [] Add better clean options 
