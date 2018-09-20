@@ -12,14 +12,12 @@ install=lcleaner.install
 source=("lcleaner.py"
         "lcleaner.png"
         "lcleaner.desktop"
-        "lcleaner.conf"
 	"org.lcleaner.policy")
 
-sha256sums=('4fe1b85883adcccccf05e30756d68c60859db18ec760d22f8ea24d78690a4496'
-            '874700067f446dff59f8e4e6c3b14519ca8afdf31742af629343c80002c71376'
-            'c5dbfca766050bdbfd36866c1f479ca8039aae80fa8b2847b376c05087d1364c'
-            'd8fafeb25a8b2368803565ed62ba147aa38adfe57089fe44125f5e07eea3d21b'
-            'dcf05a9d8c5cfe2cc23523eaab9bbd30932b3d2c68ad8d38edbdcad372053920')		
+sha256sums=('98c83230d1db982f4864660e83e8d6de6cce14ad85d33e2594ca8bf62107a1e7'
+            '08797be12a2e46ae358819ce6f439bcac2dbc28da6f3c6db43c6ec766cdb08be'
+            '005ecd297028b12cda1c413fe5ca20fdeadb96901f4f79ead315cd7ad38c972f'
+            '3dc6506ad5f5f6246ef51dd88bae758d144b7d7b2ff7c017f798ce18226e53db')		
 
 package() {
         install -Dm644 "lcleaner.desktop" "${pkgdir}/usr/share/applications/lcleaner.desktop"
