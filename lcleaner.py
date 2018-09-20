@@ -3,8 +3,7 @@
 # Author: theo546, liberodark
 # License: GNU GPLv3
 
-import os
-import sys
+import os, sys, glob, re, threading, datetime, time
 from PIL import Image
 import subprocess
 from tkinter import *
@@ -30,13 +29,13 @@ desktop = "$HOME/.local/share/applications"
 pacmanfichier = "/etc/pacman.conf"
 
 try:
-    #On suppose d'abord qu'AMAR est désactivé. On met donc etatamar = 0 au départ.
-    etatamar = 0
+    #On suppose d'abord qu'AMAR est désactivé. On met donc etatlc = 0 au départ.
+    etatlc = 0
     with open(pacmanfichier, 'r') as searchfile:
         for line in searchfile:
-            #Si la chaîne '[AMAR]' est écrit quelque part dans pacman.conf, alors le dépôt est activé et on met etatamar = 1.
+            #Si la chaîne '[AMAR]' est écrit quelque part dans pacman.conf, alors le dépôt est activé et on met etatlc = 1.
             if 'amar.conf' in line:
-                etatamar = 1
+                etatlc = 1
     searchfile.close()
 except OSError:
     print("cache inaccessible, give the path to your folder")
@@ -53,7 +52,7 @@ def pressA():
             ecrire.close()
             os.system("sudo pacman -Syy")
             INFO.config(text="Cleaned", fg="green")  # on active le depot AMAR, donc on ecrit sur le fichier.
-            etatamar = 1
+            etatlc = 1
             ecrire.close()
     except OSError:
         messagebox.showerror("Not Cleaned", "Ficher pacman.conf non accessible en écrture\nVérifier vos droit et relancer"
@@ -73,7 +72,7 @@ def pressB():
                 new_f.write(line)
         os.system ("sudo pacman -Syy")
         INFO.config(text="Inactif", fg="red")  # on active le depot AMAR, donc on ecrit sur le fichier.
-        etatamar = 0
+        etatlc = 0
         f.close()
         new_f.close()
     except OSError:
@@ -101,7 +100,7 @@ MESSAGE = Label(win, text='STATE OF THE PC', fg="blue")
 INFO.pack(side=BOTTOM)  # we close the buttons by deciding on their location
 MESSAGE.pack(side=BOTTOM)
 
-if etatamar:
+if etatlc:
     A.pack()
     A.config(state=DISABLED)
     B.pack()
@@ -112,7 +111,7 @@ else:
     B.pack()
     B.config(state=DISABLED)
 
-if etatamar == 0:
+if etatlc == 0:
     INFO.config(text="Bad", fg="red")  # on active le depot AMAR, donc on ecrit sur le fichier.
 else:
     INFO.config(text="Good", fg="green")  # on active le depot AMAR, donc on ecrit sur le fichier.
