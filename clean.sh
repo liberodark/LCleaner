@@ -27,7 +27,7 @@ version="0.0.3"
 
 # update updater
 
-   if [ "$update_status" = "false" ]; then # update off
+   if [ "$update_status" = "true" ]; then # update on
    	wget -O $0 $update_source
    	$0 noupdate
    	exit 0
