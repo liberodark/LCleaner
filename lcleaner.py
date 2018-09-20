@@ -52,11 +52,11 @@ def pressA():
             ecrire.write(configamar)
             ecrire.close()
             os.system("sudo pacman -Syy")
-            INFO.config(text="Actif", fg="green")  # on active le depot AMAR, donc on ecrit sur le fichier.
+            INFO.config(text="Cleaned", fg="green")  # on active le depot AMAR, donc on ecrit sur le fichier.
             etatamar = 1
             ecrire.close()
     except OSError:
-        messagebox.showerror("Error", "Ficher pacman.conf non accessible en écrture\nVérifier vos droit et relancer"
+        messagebox.showerror("Not Cleaned", "Ficher pacman.conf non accessible en écrture\nVérifier vos droit et relancer"
                                        " le script\nVérifier aussi que vous ne faite une mise à jours en même temps")
 
 
