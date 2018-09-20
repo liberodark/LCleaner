@@ -62,5 +62,5 @@ lcleaner -cache -trash (To Clean Trash and Cache)
 - [ ] Add selection for clean
 - [ ] Add one bouton to clean (1 Click to clean)
 - [ ] Add Auto Clean
-- [x] Add Auto Detecte your Package Manager
+- [x] Add Auto Detecte your Package Manager (pacman, yum, apt)
 - [ ] Add better clean options
