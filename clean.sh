@@ -8,6 +8,7 @@
 # Init
 
 package=(/var/cache/pacman/pkg /var/cache/apt/archives) # /var/cache/yum/$basearch/$releasever
+# exeption=($HOME/.cache/pkg $HOME/.cache/archives)
 cache="$HOME/.cache"
 trash="$HOME/.local/share/Trash/files"
 journal="/var/log"
@@ -27,7 +28,7 @@ version="0.0.4"
 
 # update updater
 
-   if [ "$update_status" = "true" ]; then # update on
+   if [ "$update_status" = "false" ]; then # update off
    	wget -O $0 $update_source
    	$0 noupdate
    	exit 0
@@ -53,7 +54,7 @@ version="0.0.4"
   if [[ -z "$count" ]] || [[ $count -eq 0 ]]; then
       echo "Cache is empty"
   else
-      # sudo rm -r $cache/*
+      #sudo rm -r $cache/*
       echo "Cache is cleaned"
   fi
   
@@ -89,8 +90,8 @@ do
         rc=$?
         if [[ -n "$rc" ]] && [[ $rc -ne 0 ]]
         then
-                # echo "$executable do not exist, $fichier to remove"
-                sudo rm "$fichier"
+                echo "$executable do not exist, $fichier to remove"
+                sudo rm "$fichier" 2>/dev/null
                 echo "Desktop is cleaned"
         fi
 done
