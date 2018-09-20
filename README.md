@@ -8,7 +8,9 @@ Linux-Cleaner
 ## Fonction Support
 - [x] Remove cache apps.
 - [x] Remove Trash.
+- [x] Remove journal apps.
 - [x] Remove empty or old desktop entry.
+- [x] Auto Update.
 
 ## OS Support
 - [X] Ubuntu
