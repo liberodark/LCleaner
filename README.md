@@ -20,6 +20,6 @@ Linux-Cleaner
 
 
 ## Roadmap
-- [] Make GUI
-- [] Go to python 3
-- [] Add better clean options 
+- [ ] Make GUI
+- [ ] Go to python 3
+- [ ] Add better clean options 
