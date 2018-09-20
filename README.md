@@ -33,7 +33,7 @@ lcleaner --clean (To Clean All)
 lcleaner -cache -trash (To Clean Trash and Cache)
 
 # Run Bash
-```wget -Nnv https://raw.githubusercontent.com/liberodark/Linux-Cleaner/master/clean.sh && chmod +x clean.sh; ./clean.sh```
+```wget -Nnv https://raw.githubusercontent.com/liberodark/LCleaner/master/v1/clean.sh && chmod +x clean.sh; ./clean.sh```
 
 ## Fonction Support
 - [x] Remove cache apps.
