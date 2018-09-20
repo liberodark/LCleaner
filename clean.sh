@@ -35,6 +35,28 @@ version="0.0.3"
 
   # ls -a $journal | egrep -v "^\.+$" 
 
+# Check Package
+
+  count=$(ls -a $package | sed -e "/\.$/d" | wc -l 2>/dev/null)
+
+  if [[ -z "$count" ]] || [[ $count -eq 0 ]]; then
+      echo "Package is empty"
+  else
+      sudo rm -r $package/*
+      echo "Package is cleaned"
+  fi
+
+# Check Cache
+
+  count=$(ls -a $cache | sed -e "/\.$/d" | wc -l 2>/dev/null)
+
+  if [[ -z "$count" ]] || [[ $count -eq 0 ]]; then
+      echo "Cache is empty"
+  else
+      # sudo rm -r $cache/*
+      echo "Cache is cleaned"
+  fi
+  
 # Check Trash
 
   count=$(ls -a $trash | sed -e "/\.$/d" | wc -l 2>/dev/null)
