@@ -35,7 +35,7 @@ lcleaner -cache -trash (To Clean Trash and Cache)
 # Run Bash
 ```wget -Nnv https://raw.githubusercontent.com/liberodark/LCleaner/master/v1/clean.sh && chmod +x clean.sh; ./clean.sh```
 
-## Fonction Support
+## Fonction Support in Bash
 - [x] Remove cache apps.
 - [x] Remove Trash.
 - [x] Remove journal apps.
@@ -49,7 +49,7 @@ lcleaner -cache -trash (To Clean Trash and Cache)
 
 
 
-## Roadmap
+## Roadmap to v2
 - [x] Make GUI
 - [x] Go to python 3
 - [ ] Add terminal commands (```--clean all``` or ```--clean cache```)
