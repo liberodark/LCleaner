@@ -1,3 +1,8 @@
+<p align="center">
+    <img src="https://github.com/liberodark/LCleaner/raw/master/lcleaner.png">    
+</p>
+<p align="center">
+
 # LCleaner is Linux Cleaner
 
 Is simple gui to clean your linux distro and secure cleaning
