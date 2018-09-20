@@ -33,4 +33,5 @@ Is simple gui to clean your linux distro and secure cleaning
 - [ ] Add selection for clean
 - [ ] Add one bouton to clean (1 Click to clean)
 - [ ] Add Auto Clean
+- [x] Add Auto Detecte your Package Manager
 - [ ] Add better clean options
