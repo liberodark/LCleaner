@@ -1,19 +1,19 @@
 # Maintainer: Elrondo46 TuxnVape <elrond94@hotmail.com>
 
-pkgname=amar-installer
-pkgver=1.7.2
+pkgname=lcleaner
+pkgver=0.0.1
 pkgrel=1
-pkgdesc="Install AMAR repository"
+pkgdesc="Clean your Linux"
 arch=('x86_64')
 license=('GPL3')
-url="https://www.tuxnvape.fr/"
+url="https://github.com/liberodark/LCleaner"
 depends=('tk' 'python-pillow')
-install=amar.install
-source=("amar.py"
-        "amar.png"
-        "amar.desktop"
-        "amar.conf"
-	"org.tnv.amar.policy")
+install=lcleaner.install
+source=("lcleaner.py"
+        "lcleaner.png"
+        "lcleaner.desktop"
+        "lcleaner.conf"
+	"org.lcleaner.policy")
 
 sha256sums=('4fe1b85883adcccccf05e30756d68c60859db18ec760d22f8ea24d78690a4496'
             '874700067f446dff59f8e4e6c3b14519ca8afdf31742af629343c80002c71376'
@@ -22,10 +22,9 @@ sha256sums=('4fe1b85883adcccccf05e30756d68c60859db18ec760d22f8ea24d78690a4496'
             'dcf05a9d8c5cfe2cc23523eaab9bbd30932b3d2c68ad8d38edbdcad372053920')		
 
 package() {
-        install -Dm644 "amar.desktop" "${pkgdir}/usr/share/applications/amar.desktop"
-        install -Dm644 "amar.py" "${pkgdir}/usr/bin/amar.py"
-        install -Dm644 "amar.png" "${pkgdir}/usr/share/icons/amar.png"
-        install -Dm644 "amar.conf" "${pkgdir}/etc/pacman.d/amar.conf"
-        install -Dm644 "org.tnv.amar.policy" "${pkgdir}/usr/share/polkit-1/actions/org.tnv.amar.policy"
+        install -Dm644 "lcleaner.desktop" "${pkgdir}/usr/share/applications/lcleaner.desktop"
+        install -Dm644 "lcleaner.py" "${pkgdir}/usr/bin/lcleaner.py"
+        install -Dm644 "lcleaner.png" "${pkgdir}/usr/share/icons/lcleaner.png"
+        install -Dm644 "org.lcleaner.policy" "${pkgdir}/usr/share/polkit-1/actions/org.lcleaner.policy"
 } 
 
