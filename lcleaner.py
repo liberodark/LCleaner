@@ -14,7 +14,7 @@ if sys.version_info[0] == 3:
 else:
     import tkMessageBox as messagebox
 
-os.system("xrdb -load /dev/null") # chargement des données avec xrdb
+#os.system("xrdb -load /dev/null") # loading data with xrdb
 
 # Folders
 
