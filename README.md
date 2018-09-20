@@ -1,4 +1,6 @@
-# Linux-Cleaner or LCleaner
+# LCleaner is Linux Cleaner
+
+Is simple gui to clean your linux distro and secure cleaning
 
 # Run
 
