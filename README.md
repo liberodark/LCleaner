@@ -1,5 +1,4 @@
-# Linux-Cleaner
-Linux-Cleaner
+# Linux-Cleaner or LCleaner
 
 # Run
 
