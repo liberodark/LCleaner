@@ -7,13 +7,13 @@
 
 # Init
 
-package="/var/cache/pacman/pkg; /var/cache/apt/archives" # /var/cache/yum/$basearch/$releasever
+package=(/var/cache/pacman/pkg /var/cache/apt/archives) # /var/cache/yum/$basearch/$releasever
 cache="$HOME/.cache"
 trash="$HOME/.local/share/Trash/files"
 journal="/var/log"
 desktop="$HOME/.local/share/applications"
 update_source="https://raw.githubusercontent.com/liberodark/Linux-Cleaner/master/clean.sh"
-version="0.0.3"
+version="0.0.4"
 
   echo "Welcome on Linux Cleaner $version"
 
