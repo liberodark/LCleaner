@@ -14,6 +14,18 @@ Stadalone : ```nuitka3 --standalone --recurse-on --python-version=3.7 lcleaner.p
 
 Normal : ```nuitka3 --recurse-on --python-version=3.7 lcleaner.py```
 
+# How to use :
+lcleaner --clean : Clean All
+lcleaner -cache : Clean Cache
+lcleaner -trash : Clean Trash
+lcleaner -journal : Clean Journal
+lcleaner -desktop : Clean Desktop
+lcleaner --help : show help
+
+# Exemples :
+lcleaner --clean (To Clean All)
+lcleaner -cache -trash (To Clean Trash and Cache)
+
 # Run Bash
 ```wget -Nnv https://raw.githubusercontent.com/liberodark/Linux-Cleaner/master/clean.sh && chmod +x clean.sh; ./clean.sh```
 
