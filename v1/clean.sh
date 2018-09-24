@@ -82,16 +82,16 @@ version="0.0.4"
   
 # Check Desktop
 
-for fichier in `ls ${desktop}/*.desktop`
+for files in `ls ${desktop}/*.desktop`
 do
-        ligne=`grep '^Exec' $fichier | tail -1`
-        executable=`echo $ligne | sed 's/^\([^= ]\{4\}\)=\"\{0,1\}\([^= \"]\{1,\}\)\"\{0,1\}.*$/\2/g'`
+        line=`grep '^Exec' $files | tail -1`
+        executable=`echo $line | sed 's/^\([^= ]\{4\}\)=\"\{0,1\}\([^= \"]\{1,\}\)\"\{0,1\}.*$/\2/g'`
         which $executable 1>/dev/null 2>/dev/null
         rc=$?
         if [[ -n "$rc" ]] && [[ $rc -ne 0 ]]
         then
-                echo "$executable do not exist, $fichier to remove"
-                rm "$fichier" 2>/dev/null
+                echo "$executable do not exist, $files to remove"
+                rm "$files" 2>/dev/null
                 echo "Desktop is cleaned"
         fi
 done
