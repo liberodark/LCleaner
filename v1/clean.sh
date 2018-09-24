@@ -43,7 +43,7 @@ version="0.0.4"
   if [[ -z "$count" ]] || [[ $count -eq 0 ]]; then
       echo "Package is empty"
   else
-      sudo rm -r $package/*
+      rm -r $package/*
       echo "Package is cleaned"
   fi
 
@@ -65,7 +65,7 @@ version="0.0.4"
   if [[ -z "$count" ]] || [[ $count -eq 0 ]]; then
       echo "Trash is empty"
   else
-      sudo rm -r $trash/*
+      rm -r $trash/*
       echo "Trash is cleaned"
   fi
 
@@ -76,7 +76,7 @@ version="0.0.4"
   if [[ -z "$count" ]] || [[ $count -eq 0 ]]; then
       echo "Journal is empty"
   else
-      sudo rm -r $journal/*
+      rm -r $journal/*
       echo "Journal is cleaned"
   fi
   
@@ -91,7 +91,7 @@ do
         if [[ -n "$rc" ]] && [[ $rc -ne 0 ]]
         then
                 echo "$executable do not exist, $fichier to remove"
-                sudo rm "$fichier" 2>/dev/null
+                rm "$fichier" 2>/dev/null
                 echo "Desktop is cleaned"
         fi
 done
