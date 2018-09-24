@@ -15,6 +15,7 @@ cache="$HOME/.cache"
 trash="$HOME/.local/share/Trash/files"
 journal="/var/log"
 desktop="$HOME/.local/share/applications"
+temp="/tmp"
 update_source="https://raw.githubusercontent.com/liberodark/Linux-Cleaner/master/clean.sh"
 version="0.0.6"
 
