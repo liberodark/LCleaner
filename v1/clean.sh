@@ -16,16 +16,21 @@ trash="$HOME/.local/share/Trash/files"
 journal="/var/log"
 desktop="$HOME/.local/share/applications"
 temp="/tmp"
+config="/tmp/config.conf"
 update_source="https://raw.githubusercontent.com/liberodark/Linux-Cleaner/master/clean.sh"
-version="0.0.6"
-
+version="0.0.7"
+-------------------------------
+touch $config
+source $config
+echo $desktop >> $config # Make a config file for root process
+------------------------------
       echo "Welcome on Linux Cleaner $version"
     
     # Check Root
     if [[ $(/usr/bin/id -u) -ne 0 ]]; then
       echo "Not running as root, please run as root"
       exit
-  fi
+    fi
 
     # make update if asked
 
