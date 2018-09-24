@@ -2,7 +2,7 @@
 #
 # About: Clean linux automatically
 # Author: liberodark
-# Project: Linux-Cleaner
+# Project: LCleaner
 # License: GNU GPLv3
 
 # Init
