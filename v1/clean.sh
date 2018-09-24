@@ -7,7 +7,7 @@
 
 # Init
 
-package=(/var/cache/pacman/pkg /var/cache/apt/archives) # /var/cache/yum/$basearch/$releasever
+package=(/var/cache/pacman/pkg /var/cache/apt/archives /var/cache/yum/x86_64/6server /var/cache/yum/x86_64/7server /var/cache/yum/i386/6server /var/cache/yum/i386/7server)
 # exeption=($HOME/.cache/pkg $HOME/.cache/archives)
 cache="$HOME/.cache"
 trash="$HOME/.local/share/Trash/files"
