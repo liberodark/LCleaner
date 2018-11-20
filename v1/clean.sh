@@ -16,14 +16,29 @@ trash="$HOME/.local/share/Trash/files"
 journal="/var/log"
 desktop="$HOME/.local/share/applications"
 temp="/tmp"
-config="/tmp/config.conf"
+config=$(mktemp)
 update_source="https://raw.githubusercontent.com/liberodark/Linux-Cleaner/master/clean.sh"
 version="0.0.7"
--------------------------------
-touch $config
-source $config
-echo $desktop >> $config # Make a config file for root process
-------------------------------
+
+# Make config file
+echo $package >> $config
+echo $cache >> $config
+echo $trash >> $config
+echo $journal >> $config
+echo $desktop >> $config
+
+if [ -f $config ]
+then
+    for i in $(cat $config)
+    do
+        if [ -d "$i" ]
+        then 
+            cnt=$(ls "$i"| wc -l)
+            echo "Nombre d'element dans $i : $cnt"
+        fi
+    done
+fi
+
       echo "Welcome on Linux Cleaner $version"
     
     # Check Root
