@@ -1,6 +1,6 @@
 # LCleaner : Linux Cleaner
 # About: Cleaner your linux distro simply
-# Author: theo546, liberodark, Minzord
+# Author: theo546, liberodark, minzord
 # License: GNU GPLv3
 
 import os, sys, glob, re, threading, datetime, time
