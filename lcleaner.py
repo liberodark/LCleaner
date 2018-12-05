@@ -8,13 +8,9 @@ import os, sys, glob, re, threading, datetime, time
 from PIL import Image
 import subprocess
 from tkinter import *
-
-if sys.version_info[0] == 3:
-    from tkinter import messagebox
-else:
-    import tkMessageBox as messagebox
-
-#os.system("xrdb -load /dev/null") # loading data with xrdb
+from tkinter.messagebox import *
+from tkinter.filedialog import *
+from PIL import Image, ImageTk
 
 # Folders
 
@@ -27,94 +23,25 @@ cache = "$HOME/.cache"
 trash = "$HOME/.local/share/Trash/files"
 journal = "/var/log"
 desktop = "$HOME/.local/share/applications"
-pacmanfichier = "/etc/pacman.conf"
 
-try:
-    #On suppose d'abord qu'AMAR est désactivé. On met donc etatlc = 0 au départ.
-    etatlc = 0
-    with open(pacmanfichier, 'r') as searchfile:
-        for line in searchfile:
-            #Si la chaîne '[AMAR]' est écrit quelque part dans pacman.conf, alors le dépôt est activé et on met etatlc = 1.
-            if 'amar.conf' in line:
-                etatlc = 1
-    searchfile.close()
-except OSError:
-    print("cache inaccessible, give the path to your folder")
-    sys.exit(1)
+windows = Tk()
+windows.title("LCleaner v0.0.1")
+windows.geometry("620x280")
+icon = PhotoImage(file="/usr/share/icons/lcleaner.png")  # link to the window icon
+windows.tk.call('wm', 'iconphoto', windows._w, tux)  # window application
 
-configamar = "\n#Do not disable AMAR manually if you use the app\nInclude = /etc/pacman.d/amar.conf\n"
-
-def pressA():
-    A.config(state=DISABLED)
-    B.config(state=ACTIVE)
-    try:
-        with open(pacmanfichier, "a") as ecrire:
-            ecrire.write(configamar)
-            ecrire.close()
-            os.system("sudo pacman -Syy")
-            INFO.config(text="Cleaned", fg="green")  # on active le depot AMAR, donc on ecrit sur le fichier.
-            etatlc = 1
-            ecrire.close()
-    except OSError:
-        messagebox.showerror("Not Cleaned", "Ficher pacman.conf non accessible en écrture\nVérifier vos droit et relancer"
-                                       " le script\nVérifier aussi que vous ne faite une mise à jours en même temps")
-
-
-def pressB():
-    A.config(state=ACTIVE)
-    B.config(state=DISABLED)
-    try:
-        with open((pacmanfichier), "r") as f:
-            lines = f.readlines()
-            lines.remove("#Do not disable AMAR manually if you use the app\n")
-            lines.remove("Include = /etc/pacman.d/amar.conf\n")
-        with open((pacmanfichier), "w") as new_f:
-            for line in lines:
-                new_f.write(line)
-        os.system ("sudo pacman -Syy")
-        INFO.config(text="Inactif", fg="red")  # on active le depot AMAR, donc on ecrit sur le fichier.
-        etatlc = 0
-        f.close()
-        new_f.close()
-    except OSError:
-        messagebox.showerror("Error", "Ficher pacman.conf non accessible en écrture\nVérifier vos droit et relancer"
-                                       " le script\nVérifier aussi que vous ne faite une mise à jours en même temps")
-
-
-win = Tk()
-win.title("LCleaner v0.0.1")
-win.geometry("620x280")
-tux = PhotoImage(file="/usr/share/icons/lcleaner.png")  # link to the window icon
-win.tk.call('wm', 'iconphoto', win._w, tux)  # window application
-
-TEXTE = Label(win, text='Linux Cleaner', fg="blue")
-TEXTE2 = Label(win, text="LCleaner clean your linux distro.", fg="purple")
+TEXTE = Label(windows, text='Linux Cleaner', fg="blue")
+TEXTE2 = Label(windows, text="LCleaner clean your linux distro.", fg="purple")
 TEXTE.pack(side=TOP, padx=5, pady=3)  # Title of the text application
 TEXTE2.pack(side=TOP, padx=5, pady=10)  # Title of the text application
 
-A = Button(win, text='CLEAN', height=2, width=30, command=pressA)
-B = Button(win, text='RESTORE', height=2, width=30, command=pressB)
+CLEAN = Button(windows, text='CLEAN', height=2, width=30, command=pressA)
+RESTORE = Button(windows, text='RESTORE', height=2, width=30, command=pressB)
 
-INFO = Label(win, text='', fg="black")  # Information that changes according to the button pressed by the user
-MESSAGE = Label(win, text='STATE OF THE PC', fg="blue")
+INFO = Label(windows, text='', fg="black")  # Information that changes according to the button pressed by the user
+MESSAGE = Label(windows, text='STATE OF THE PC', fg="blue")
 
 INFO.pack(side=BOTTOM)  # we close the buttons by deciding on their location
 MESSAGE.pack(side=BOTTOM)
 
-if etatlc:
-    A.pack()
-    A.config(state=DISABLED)
-    B.pack()
-    B.config(state=ACTIVE)
-else:
-    A.pack()
-    A.config(state=ACTIVE)
-    B.pack()
-    B.config(state=DISABLED)
-
-if etatlc == 0:
-    INFO.config(text="Bad", fg="red")  # on active le depot AMAR, donc on ecrit sur le fichier.
-else:
-    INFO.config(text="Good", fg="green")  # on active le depot AMAR, donc on ecrit sur le fichier.
-
-win.mainloop()
+windows.mainloop()
