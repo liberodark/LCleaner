@@ -27,7 +27,7 @@ windows = Tk()
 windows.title("LCleaner v0.0.1")
 windows.geometry("620x280")
 icon = PhotoImage(file="/usr/share/icons/lcleaner.png")  # link to the window icon
-windows.tk.call('wm', 'iconphoto', windows._w, tux)  # window application
+windows.tk.call('wm', 'iconphoto', windows._w, icon)  # window application
 
 TEXTE = Label(windows, text='Linux Cleaner', fg="blue")
 TEXTE2 = Label(windows, text="LCleaner clean your linux distro.", fg="purple")
