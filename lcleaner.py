@@ -1,7 +1,6 @@
 # LCleaner : Linux Cleaner
 # About: Cleaner your linux distro simply
-# Author: theo546, liberodark
-# Third Party : Elrondo46 TuxnVape (code based on AMAR)
+# Author: theo546, liberodark, Minzord
 # License: GNU GPLv3
 
 import os, sys, glob, re, threading, datetime, time
