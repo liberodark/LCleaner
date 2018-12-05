@@ -29,6 +29,14 @@ windows.geometry("620x280")
 icon = PhotoImage(file="/usr/share/icons/lcleaner.png")  # link to the window icon
 windows.tk.call('wm', 'iconphoto', windows._w, icon)  # window application
 
+
+def clean():
+    if askyesno('LCleaner', 'Êtes-vous sûr de vouloir faire efaccer'):
+        os.system("python clean.py")
+
+
+
+
 TEXTE = Label(windows, text='Linux Cleaner', fg="blue")
 TEXTE.config(font=("Arial", 20))
 
@@ -38,7 +46,7 @@ TEXTE2.config(font=("Arial", 14))
 TEXTE.pack(side=TOP, padx=5, pady=3)  # Title of the text application
 TEXTE2.pack(side=TOP, padx=5, pady=10)  # Title of the text application
 
-CLEAN = Button(windows, text='CLEAN', height=2, width=30)
+CLEAN = Button(windows, text='CLEAN', height=2, width=30, command=clean)
 RESTORE = Button(windows, text='RESTORE', height=2, width=30)
 
 CLEAN.pack()
