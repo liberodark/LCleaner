@@ -1,6 +1,7 @@
 # LCleaner : Linux Cleaner
 # About: Cleaner your linux distro simply
 # Author: theo546, liberodark
+# Third Party : Elrondo46 TuxnVape
 # License: GNU GPLv3
 
 import os, sys, glob, re, threading, datetime, time
