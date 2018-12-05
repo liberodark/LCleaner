@@ -34,8 +34,8 @@ TEXTE2 = Label(windows, text="LCleaner clean your linux distro.", fg="purple")
 TEXTE.pack(side=TOP, padx=5, pady=3)  # Title of the text application
 TEXTE2.pack(side=TOP, padx=5, pady=10)  # Title of the text application
 
-CLEAN = Button(windows, text='CLEAN', height=2, width=30, command=pressA)
-RESTORE = Button(windows, text='RESTORE', height=2, width=30, command=pressB)
+CLEAN = Button(windows, text='CLEAN', height=2, width=30)
+RESTORE = Button(windows, text='RESTORE', height=2, width=30)
 
 INFO = Label(windows, text='', fg="black")  # Information that changes according to the button pressed by the user
 MESSAGE = Label(windows, text='STATE OF THE PC', fg="blue")
