@@ -1,5 +1,5 @@
 # LCleaner : Linux Cleaner
-# About: Cleaner your linux distro simply
+# About: Clean your linux distro simply
 # Author: theo546, liberodark, minzord
 # License: GNU GPLv3
 
@@ -31,7 +31,7 @@ windows.tk.call('wm', 'iconphoto', windows._w, icon)  # window application
 
 
 def clean():
-    if askyesno('LCleaner', 'Êtes-vous sûr de vouloir faire efaccer'):
+    if askyesno('LCleaner', 'Are you sure you want to delete'):
         os.system("python clean.py")
 
 
