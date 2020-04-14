@@ -5,6 +5,10 @@
 # Thanks : Fanch The System
 # License: GNU GPLv3
 
+version="0.0.8"
+
+echo "Welcome on LCleaner Script $version"
+
 #=================================================
 # RETRIEVE ARGUMENTS FROM THE MANIFEST AND VAR
 #=================================================
@@ -18,9 +22,6 @@ trash="$HOME/.local/share/Trash/files"
 journal="/var/log"
 desktop="$HOME/.local/share/applications"
 temp="/tmp"
-config=$(mktemp)
-update_source="https://raw.githubusercontent.com/liberodark/Linux-Cleaner/master/clean.sh"
-version="0.0.7"
 
 # Make config file
 echo "$package" >> "$config"
@@ -42,28 +43,6 @@ then
 fi
 
       echo "Welcome on Linux Cleaner $version"
-    
-    # Check Root
-    if [[ $(/usr/bin/id -u) -ne 0 ]]; then
-      echo "Not running as root, please run as root"
-      exit
-    fi
-
-    # make update if asked
-
-      if [ "$1" = "noupdate" ]; then
-      	update_status="false"
-      else
-      	update_status="true"
-      fi ;
-
-    # update updater
-
-       if [ "$update_status" = "false" ]; then # update off
-       	wget -O "$0" $update_source
-       	$0 noupdate
-       	exit 0
-      fi ;
 
     # Check Package
 
@@ -77,7 +56,7 @@ fi
       if [[ -z "$count" ]] || [[ $count -eq 0 ]]; then
           echo "Package is empty"
       else
-          rm -r "$package"/*
+          sudo rm -rf "$package"/*
           echo "Package is cleaned"
       fi
     else
@@ -96,7 +75,7 @@ fi
       if [[ -z "$count" ]] || [[ $count -eq 0 ]]; then
           echo "Cache is empty"
       else
-          #sudo rm -r $cache/*
+          #sudo rm -rf $cache/*
           echo "Cache is cleaned"
       fi
     else
@@ -116,7 +95,7 @@ fi
       if [[ -z "$count" ]] || [[ $count -eq 0 ]]; then
           echo "Trash is empty"
       else
-          rm -r "$trash"/*
+          sudo rm -rf "$trash"/*
           echo "Trash is cleaned"
       fi
     else
@@ -135,7 +114,7 @@ fi
       if [[ -z "$count" ]] || [[ $count -eq 0 ]]; then
           echo "Journal is empty"
       else
-          rm -r $journal/*
+          sudo rm -rf $journal/*
           echo "Journal is cleaned"
       fi
     else
@@ -158,7 +137,7 @@ fi
             if [[ -n "$rc" ]] && [[ $rc -ne 0 ]]
             then
                     echo "$executable do not exist, $files to remove"
-                    rm "$files" 2>/dev/null
+                    rm -f "$files" 2>/dev/null
                     echo "Desktop is cleaned"
             fi
     done
