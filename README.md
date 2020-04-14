@@ -41,14 +41,11 @@ lcleaner -cache -trash (To Clean Trash and Cache)
 - [x] Remove Trash.
 - [x] Remove journal apps.
 - [x] Remove empty or old desktop entry.
-- [x] Auto Update.
 
 ## OS Support
 - [X] Ubuntu
 - [X] Arch Linux / Manjaro
 - [ ] Other need to test
-
-
 
 ## Roadmap to v2
 - [x] Make GUI
