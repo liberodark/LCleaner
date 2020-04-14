@@ -2,10 +2,12 @@
 #
 # About: Clean linux automatically
 # Author: liberodark
-# Project: LCleaner
+# Thanks : Fanch The System
 # License: GNU GPLv3
 
-# Init
+#=================================================
+# RETRIEVE ARGUMENTS FROM THE MANIFEST AND VAR
+#=================================================
 
 # ls -a $journal | egrep -v "^\.+$" 
 #remove="find -mtime +1 -delete"
