@@ -5,17 +5,17 @@ Is simple gui to clean your linux distro and secure cleaning
 
 
 
-# Run :
+## Run :
 ```sudo pip install PyQt5```
 
 ```wget -Nnv https://raw.githubusercontent.com/liberodark/Linux-Cleaner/master/lcleaner.sh && sudo python3 lcleaner.py```
 
-# Build :
+## Build :
 Stadalone : ```nuitka3 --standalone --recurse-on --python-version=3.7 lcleaner.py```
 
 Normal : ```nuitka3 --recurse-on --python-version=3.7 lcleaner.py```
 
-# How to use :
+## How to use :
 lcleaner --clean : Clean All
 
 lcleaner -cache : Clean Cache
@@ -28,12 +28,12 @@ lcleaner -desktop : Clean Desktop
 
 lcleaner --help : show help
 
-# Exemples :
+## Exemples :
 lcleaner --clean (To Clean All)
 
 lcleaner -cache -trash (To Clean Trash and Cache)
 
-# Run Bash
+## Run Bash
 ```wget -Nnv https://raw.githubusercontent.com/liberodark/LCleaner/master/v1/clean.sh && chmod +x clean.sh; ./clean.sh```
 
 ## Fonction Support in Bash
