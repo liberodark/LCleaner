@@ -21,15 +21,15 @@ update_source="https://raw.githubusercontent.com/liberodark/Linux-Cleaner/master
 version="0.0.7"
 
 # Make config file
-echo $package >> $config
-echo $cache >> $config
-echo $trash >> $config
-echo $journal >> $config
-echo $desktop >> $config
+echo "$package" >> "$config"
+echo "$cache" >> "$config"
+echo "$trash" >> "$config"
+echo $journal >> "$config"
+echo "$desktop" >> "$config"
 
-if [ -f $config ]
+if [ -f "$config" ]
 then
-    for i in $(cat $config)
+    for i in $(cat "$config")
     do
         if [ -d "$i" ]
         then 
@@ -58,7 +58,7 @@ fi
     # update updater
 
        if [ "$update_status" = "false" ]; then # update off
-       	wget -O $0 $update_source
+       	wget -O "$0" $update_source
        	$0 noupdate
        	exit 0
       fi ;
@@ -66,16 +66,16 @@ fi
     # Check Package
 
     echo -n "Do you want to remove packages (y/n)? "
-    read answer
+    read -r answer
   
     if [ "$answer" != "${answer#[Yy]}" ] ;then
         echo Yes
-          count=$(ls -a $package | sed -e "/\.$/d" | wc -l 2>/dev/null)
+          count=$(ls -a "$package" | sed -e "/\.$/d" | wc -l 2>/dev/null)
 
       if [[ -z "$count" ]] || [[ $count -eq 0 ]]; then
           echo "Package is empty"
       else
-          rm -r $package/*
+          rm -r "$package"/*
           echo "Package is cleaned"
       fi
     else
@@ -85,11 +85,11 @@ fi
     # Check Cache
 
     echo -n "Do you want to remove cache (y/n)? "
-    read answer
+    read -r answer
   
     if [ "$answer" != "${answer#[Yy]}" ] ;then
         echo Yes
-          count=$(ls -a $cache | sed -e "/\.$/d" | wc -l 2>/dev/null)
+          count=$(ls -a "$cache" | sed -e "/\.$/d" | wc -l 2>/dev/null)
 
       if [[ -z "$count" ]] || [[ $count -eq 0 ]]; then
           echo "Cache is empty"
@@ -105,16 +105,16 @@ fi
 
 
     echo -n "Do you want to remove trash (y/n)? "
-    read answer
+    read -r answer
 
     if [ "$answer" != "${answer#[Yy]}" ] ;then
         echo Yes
-          count=$(ls -a $trash | sed -e "/\.$/d" | wc -l 2>/dev/null)
+          count=$(ls -a "$trash" | sed -e "/\.$/d" | wc -l 2>/dev/null)
 
       if [[ -z "$count" ]] || [[ $count -eq 0 ]]; then
           echo "Trash is empty"
       else
-          rm -r $trash/*
+          rm -r "$trash"/*
           echo "Trash is cleaned"
       fi
     else
@@ -124,7 +124,7 @@ fi
     # Check Journal
 
     echo -n "Do you want to remove journal (y/n)? "
-    read answer
+    read -r answer
 
     if [ "$answer" != "${answer#[Yy]}" ] ;then
         echo Yes
@@ -143,15 +143,15 @@ fi
     # Check Desktop
 
     echo -n "Do you want to remove desktop (y/n)? "
-    read answer
+    read -r answer
 
     if [ "$answer" != "${answer#[Yy]}" ] ;then
         echo Yes
-        for files in `ls ${desktop}/*.desktop`
+        for files in $desktop/*.desktop
     do
-            line=`grep '^Exec' $files | tail -1`
-            executable=`echo $line | sed 's/^\([^= ]\{4\}\)=\"\{0,1\}\([^= \"]\{1,\}\)\"\{0,1\}.*$/\2/g'`
-            which $executable 1>/dev/null 2>/dev/null
+            line=$(grep '^Exec' "$files" | tail -1)
+            executable=$(echo "$line" | sed 's/^\([^= ]\{4\}\)=\"\{0,1\}\([^= \"]\{1,\}\)\"\{0,1\}.*$/\2/g')
+            which "$executable" 1>/dev/null 2>/dev/null
             rc=$?
             if [[ -n "$rc" ]] && [[ $rc -ne 0 ]]
             then
