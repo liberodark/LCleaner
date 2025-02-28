@@ -2,11 +2,11 @@
 Version=1.0
 Name=LCleaner
 Type=Application
-Comment=Clean your linux
+Comment=Clean your Linux system with ease
 Terminal=false
-Exec=pkexec /usr/bin/python /usr/bin/lcleaner.py
+Exec=pkexec /usr/bin/python3 /usr/bin/lcleaner.py
 Icon=lcleaner
 StartupNotify=true
-Categories=System;
-GenericName=LCleaner
-Keywords=cleaner
+Categories=System;Utility;
+GenericName=System Cleaner
+Keywords=cleaner;system;cache;trash;
